@@ -23,7 +23,7 @@ import java.time.format.DateTimeFormatter;
  *
  * @authores
  * Cesar Ramirez == 378938
- * Lizeth Castro == 
+ * Lizeth Castro == 310894
  * 
  */
 public class ServletEjercicio extends HttpServlet {
@@ -51,7 +51,7 @@ public class ServletEjercicio extends HttpServlet {
             out.println("<title>Resultado ServletEjercicio</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Hola Sr(a) " + miForm.getNombre() + " usted tiene " + miForm.getFechaNac() + " años"+ "</h1>");
+            out.println("<h1>Hola Sr(a) " + miForm.getNombre() + ", usted tiene " + miForm.getFechaNac() + " años"+ "</h1>");
             out.println("</body>");
             out.println("</html>");
         } finally {
