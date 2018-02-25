@@ -16,10 +16,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 /**
  *
- * @author Administrador
+ * @authores
+ * Cesar Ramirez == 378938
+ * Lizeth Castro == 
+ * 
  */
 public class ServletEjercicio extends HttpServlet {
 
@@ -46,7 +51,7 @@ public class ServletEjercicio extends HttpServlet {
             out.println("<title>Resultado ServletEjercicio</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Hola Sr(a) " + miForm.getNombre() + " fecha nac: " + miForm.getFechaNac() + "</h1>");
+            out.println("<h1>Hola Sr(a) " + miForm.getNombre() + " usted tiene " + miForm.getFechaNac() + " años"+ "</h1>");
             out.println("</body>");
             out.println("</html>");
         } finally {
@@ -85,7 +90,20 @@ public class ServletEjercicio extends HttpServlet {
         
         String fechaNac = request.getParameter("fechaNac");
         
-        miForm = new FormularioPersonaVo (nombre, fechaNac);
+        
+        // *****  Calculando la edad  ************
+        
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate fechaNacimiento = LocalDate.parse(fechaNac, fmt);
+        
+            LocalDate ahora = LocalDate.now();
+            Period periodo = Period.between(fechaNacimiento, ahora);                  
+            String edadReal = String.valueOf(periodo.getYears()) ;       
+        
+        /// **************************************************************
+            
+            
+        miForm = new FormularioPersonaVo (nombre, edadReal);
         
         processRequest(request, response);
     }
