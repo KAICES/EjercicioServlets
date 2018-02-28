@@ -20,7 +20,7 @@
             Fecha de nacimiento:<br>
             <input type ="date" name="fechaNac"></input><br>
             <br>
-            <input type="submit"/>            
+            <input type="submit" href="index.jsp"/>            
         </form>
     </body>
 </html>

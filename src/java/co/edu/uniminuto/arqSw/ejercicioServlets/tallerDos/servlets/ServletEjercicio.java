@@ -51,6 +51,16 @@ public class ServletEjercicio extends HttpServlet {
             out.println("<title>Resultado ServletEjercicio</title>");            
             out.println("</head>");
             out.println("<body>");
+            out.println("<h1>TALLER SERVLET</h1>");
+            out.println("<form action='ServletEjercicio' method='POST'>");
+            out.println( "Nombre:<br>");
+            out.println("<input type ='text' name='nombre'></input><br>");
+            out.println("<br>");
+            out.println( "Fecha de nacimiento:<br>");
+            out.println("<input type ='date' name='fechaNac'></input><br>");
+            out.println("<br>");
+            out.println("<input type='submit' href='index.jsp'/>");            
+            out.println("</form>");
             out.println("<h1>Hola Sr(a) " + miForm.getNombre() + ", usted tiene " + miForm.getFechaNac() + " años"+ "</h1>");
             out.println("</body>");
             out.println("</html>");
